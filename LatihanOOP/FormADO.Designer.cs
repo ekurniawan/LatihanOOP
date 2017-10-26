@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.btnKonek = new System.Windows.Forms.Button();
+            this.dgvPelanggan = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPelanggan)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKonek
@@ -41,14 +43,24 @@
             this.btnKonek.UseVisualStyleBackColor = true;
             this.btnKonek.Click += new System.EventHandler(this.btnKonek_Click);
             // 
+            // dgvPelanggan
+            // 
+            this.dgvPelanggan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPelanggan.Location = new System.Drawing.Point(12, 61);
+            this.dgvPelanggan.Name = "dgvPelanggan";
+            this.dgvPelanggan.Size = new System.Drawing.Size(598, 150);
+            this.dgvPelanggan.TabIndex = 1;
+            // 
             // FormADO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(622, 344);
+            this.Controls.Add(this.dgvPelanggan);
             this.Controls.Add(this.btnKonek);
             this.Name = "FormADO";
             this.Text = "FormADO";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPelanggan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -56,5 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnKonek;
+        private System.Windows.Forms.DataGridView dgvPelanggan;
     }
 }
