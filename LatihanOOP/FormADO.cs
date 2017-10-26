@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace LatihanOOP
 {
@@ -21,7 +22,8 @@ namespace LatihanOOP
         public FormADO()
         {
             InitializeComponent();
-            string strConn = "Server=localhost;Database=posdb;Uid=root;Pwd=;";
+            //string strConn = "Server=localhost;Database=posdb;Uid=root;Pwd=;";
+            string strConn = ConfigurationManager.ConnectionStrings["MysqlConnectionString"].ConnectionString;
             conn = new MySqlConnection(strConn);
         }
 
@@ -32,7 +34,7 @@ namespace LatihanOOP
                 conn.Open();
                 MessageBox.Show("Koneksi berhasil dibuka !");
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
