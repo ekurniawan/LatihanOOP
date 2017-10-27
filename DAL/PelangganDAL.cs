@@ -24,7 +24,25 @@ namespace DAL
 
         public void Delete(string id)
         {
-            throw new NotImplementedException();
+            string strSql = @"delete from Pelanggan 
+                              where KodePelanggan=@KodePelanggan";
+            SqlCommand cmd = new SqlCommand(strSql, conn);
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@KodePelanggan", id);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException sqlEx)
+            {
+                throw new Exception("Error : " + sqlEx.Message);
+            }
+            finally
+            {
+                cmd.Dispose();
+                conn.Close();
+            }
         }
 
         public IEnumerable<Pelanggan> GetAll()
@@ -125,5 +143,7 @@ namespace DAL
                 conn.Close();
             }
         }
+
+        
     }
 }
