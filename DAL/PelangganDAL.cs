@@ -12,7 +12,6 @@ namespace DAL
     public class PelangganDAL : ICrud<Pelanggan>
     {
         private SqlConnection conn;
-        private SqlCommand cmd;
 
         private string strConn = ConfigurationManager
             .ConnectionStrings["MysqlConnectionString"].ConnectionString;
